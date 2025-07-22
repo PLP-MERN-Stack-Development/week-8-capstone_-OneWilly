@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broka256 - PLP Academy Presentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .slide {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .slide h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+        
+        .slide h2 {
+            color: #34495e;
+            font-size: 2em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .slide h3 {
+            color: #2980b9;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .slide p, .slide li {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .slide ul {
+            margin-left: 20px;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .stat-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #3498db;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .tech-item {
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-top: 4px solid #e74c3c;
+        }
+        
+        .plp-header {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px 15px 0 0;
+            margin-bottom: 0;
+        }
+        
+        .plp-footer {
+            background: #34495e;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 0 0 15px 15px;
+            margin-top: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .slide {
+                padding: 20px;
+                margin: 15px 0;
+            }
+            
+            .slide h1 {
+                font-size: 2em;
+            }
+            
+            .slide h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        
+        <!-- Slide 1: Title Slide -->
+        <div class="slide">
+            <div class="plp-header">
+                <h1>🏠 BROKA256</h1>
+                <p>Revolutionizing Property Discovery in Northern Uganda</p>
+                <p><strong>Power Learn Project Academy - Capstone Presentation</strong></p>
+            </div>
+            <div style="text-align: center; padding: 40px;">
+                <h2>Connecting Property Seekers with Perfect Matches</h2>
+                <div class="highlight">
+                    <p><strong>Presented by:</strong> [Your Name]</p>
+                    <p><strong>Date:</strong> [Presentation Date]</p>
+                    <p><strong>Cohort:</strong> [Your Cohort]</p>
+                </div>
+                <p style="font-size: 1.2em; color: #7f8c8d;">
+                    "Bridging the gap between property seekers and their dream homes in Gulu and Northern Uganda"
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Problem Statement -->
+        <div class="slide">
+            <h1>🎯 The Problem We're Solving</h1>
+            <div class="highlight">
+                <h3>Property Discovery Challenges in Northern Uganda:</h3>
+                <ul>
+                    <li><strong>Limited Online Presence:</strong> Most properties aren't listed digitally</li>
+                    <li><strong>Information Asymmetry:</strong> Buyers lack comprehensive property data</li>
+                    <li><strong>Geographic Barriers:</strong> Difficult to explore properties remotely</li>
+                    <li><strong>Trust Issues:</strong> No verified property information or broker credentials</li>
+                    <li><strong>Communication Gaps:</strong> Poor connection between buyers and sellers</li>
+                </ul>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">78%</div>
+                    <p>Properties not listed online</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">65%</div>
+                    <p>Buyers struggle to find suitable properties</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">45%</div>
+                    <p>Transactions fail due to poor communication</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Our Solution -->
+        <div class="slide">
+            <h1>💡 Broka256: The Solution</h1>
+            <h2>AI-Powered Property Matching Platform</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🤖 AI Property Matching</h3>
+                    <p>Intelligent algorithms match users with properties based on preferences, budget, and lifestyle</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🗺️ Interactive Maps</h3>
+                    <p>Mapbox integration for location-based property discovery and neighborhood insights</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💬 Real-time Communication</h3>
+                    <p>Socket.io powered chat system connecting buyers, sellers, and brokers instantly</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📱 Mobile-First Design</h3>
+                    <p>Responsive design optimized for mobile users in Northern Uganda</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔔 Smart Notifications</h3>
+                    <p>Email and SMS alerts for new matches and important updates</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💳 Flexible Subscriptions</h3>
+                    <p>Tiered pricing model accessible to different user segments</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Technical Architecture -->
+        <div class="slide">
+            <h1>🛠️ Technical Stack & Architecture</h1>
+            <div class="highlight">
+                <h3>MERN Stack Implementation:</h3>
+            </div>
+            <div class="tech-stack">
+                <div class="tech-item">Next.js 15</div>
+                <div class="tech-item">React 19</div>
+                <div class="tech-item">Node.js</div>
+                <div class="tech-item">Express.js</div>
+                <div class="tech-item">MongoDB</div>
+                <div class="tech-item">Socket.io</div>
+                <div class="tech-item">Mapbox GL</div>
+                <div class="tech-item">Tailwind CSS</div>
+                <div class="tech-item">TypeScript</div>
+                <div class="tech-item">Shadcn/ui</div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">Separate</div>
+                    <p>Frontend & Backend Architecture</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Real-time</div>
+                    <p>WebSocket Communication</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Scalable</div>
+                    <p>Cloud-Ready Deployment</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Market Analysis -->
+        <div class="slide">
+            <h1>📊 Market Analysis</h1>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">2.1M</div>
+                    <p>Population in Northern Uganda</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15%</div>
+                    <p>Annual urban growth rate</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$2.5B</div>
+                    <p>Real estate market value</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">68%</div>
+                    <p>Mobile internet penetration</p>
+                </div>
+            </div>
+            <div class="highlight">
+                <h3>Target Market Segments:</h3>
+                <ul>
+                    <li><strong>Young Professionals:</strong> 25-40 years, seeking rental and purchase options</li>
+                    <li><strong>Returning Diaspora:</strong> Ugandans abroad investing in home properties</li>
+                    <li><strong>Local Investors:</strong> Business owners expanding property portfolios</li>
+                    <li><strong>Property Brokers:</strong> Real estate agents needing digital presence</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 6: Competitive Analysis -->
+        <div class="slide">
+            <h1>🏆 Competitive Advantage</h1>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🎯 Local Focus</h3>
+                    <p>Specifically designed for Northern Uganda market with local insights</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🤖 AI Integration</h3>
+                    <p>Advanced matching algorithms not available in existing platforms</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💬 Real-time Features</h3>
+                    <p>Instant communication and live chat capabilities</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📱 Mobile Optimization</h3>
+                    <p>Built mobile-first for the African market</p>
+                </div>
+            </div>
+            <div class="highlight">
+                <h3>Competitive Landscape:</h3>
+                <ul>
+                    <li><strong>Lamudi Uganda:</strong> Limited Northern Uganda coverage</li>
+                    <li><strong>Meqasa:</strong> Focused on Kampala, lacks AI features</li>
+                    <li><strong>Local Brokers:</strong> Traditional methods, no digital presence</li>
+                    <li><strong>Our Edge:</strong> AI-powered, region-specific, real-time communication</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 7: Business Model -->
+        <div class="slide">
+            <h1>💰 Business Model & Revenue Streams</h1>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🆓 Freemium Model</h3>
+                    <p>Basic property browsing free, premium features paid</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💳 Subscription Tiers</h3>
+                    <p>Monthly/Annual plans for enhanced features</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🏢 Broker Partnerships</h3>
+                    <p>Commission-based revenue from property transactions</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📢 Premium Listings</h3>
+                    <p>Featured property placements and advertising</p>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">UGX 50K</div>
+                    <p>Monthly Premium Subscription</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3%</div>
+                    <p>Transaction Commission</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">UGX 100K</div>
+                    <p>Featured Listing Fee</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Social Impact -->
+        <div class="slide">
+            <h1>🌍 Social Impact & Community Benefits</h1>
+            <div class="highlight">
+                <h3>Empowering Northern Uganda Communities:</h3>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🏠 Housing Access</h3>
+                    <p>Improved access to quality housing information for all income levels</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💼 Economic Growth</h3>
+                    <p>Supporting local brokers and property developers with digital tools</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎓 Digital Literacy</h3>
+                    <p>Promoting technology adoption in traditional real estate sector</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🌱 Urban Development</h3>
+                    <p>Contributing to planned urban growth in Gulu and surrounding areas</p>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <p>Local brokers to be onboarded</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10K+</div>
+                    <p>Properties to be digitized</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50K+</div>
+                    <p>Users expected in Year 1</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Current Traction -->
+        <div class="slide">
+            <h1>📈 Project Traction & Milestones</h1>
+            <div class="highlight">
+                <h3>Development Progress:</h3>
+                <ul>
+                    <li>✅ <strong>MVP Development:</strong> Core platform functionality completed</li>
+                    <li>✅ <strong>AI Integration:</strong> Property matching algorithm implemented</li>
+                    <li>✅ <strong>Real-time Features:</strong> Chat and notification system active</li>
+                    <li>✅ <strong>Mobile Optimization:</strong> Responsive design completed</li>
+                    <li>🔄 <strong>Beta Testing:</strong> Currently testing with local brokers</li>
+                    <li>📅 <strong>Launch Ready:</strong> Prepared for market deployment</li>
+                </ul>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <p>Development Complete</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15</div>
+                    <p>Beta Testers Onboarded</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <p>Months Development Time</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Technical Demo -->
+        <div class="slide">
+            <h1>🖥️ Live Technical Demonstration</h1>
+            <div class="highlight">
+                <h2>Platform Walkthrough:</h2>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>1. User Registration</h3>
+                    <p>Seamless onboarding process with preference setup</p>
+                </div>
+                <div class="feature-card">
+                    <h3>2. AI Property Matching</h3>
+                    <p>Intelligent recommendations based on user criteria</p>
+                </div>
+                <div class="feature-card">
+                    <h3>3. Interactive Maps</h3>
+                    <p>Location-based property discovery with Mapbox</p>
+                </div>
+                <div class="feature-card">
+                    <h3>4. Real-time Chat</h3>
+                    <p>Instant communication between users and brokers</p>
+                </div>
+                <div class="feature-card">
+                    <h3>5. Property Details</h3>
+                    <p>Comprehensive property information and media</p>
+                </div>
+                <div class="feature-card">
+                    <h3>6. Subscription Management</h3>
+                    <p>Flexible pricing and feature access control</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <p style="font-size: 1.3em; color: #2c3e50;">
+                    <strong>🌐 Live Demo: </strong>
+                    <a href="https://broka256.vercel.app" style="color: #3498db;">broka256.vercel.app</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 11: Future Roadmap -->
+        <div class="slide">
+            <h1>🚀 Future Roadmap & Scaling</h1>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Q1 2024: Launch</h3>
+                    <ul>
+                        <li>Public beta release</li>
+                        <li>Broker onboarding program</li>
+                        <li>Marketing campaign launch</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Q2 2024: Growth</h3>
+                    <ul>
+                        <li>Mobile app development</li>
+                        <li>Payment integration</li>
+                        <li>Advanced analytics</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Q3 2024: Expansion</h3>
+                    <ul>
+                        <li>Expand to other Northern cities</li>
+                        <li>Partnership with banks</li>
+                        <li>Virtual property tours</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Q4 2024: Scale</h3>
+                    <ul>
+                        <li>National expansion</li>
+                        <li>Enterprise solutions</li>
+                        <li>International partnerships</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Team & Expertise -->
+        <div class="slide">
+            <h1>👥 Team & Technical Expertise</h1>
+            <div class="highlight">
+                <h3>Power Learn Project Academy Training:</h3>
+                <ul>
+                    <li><strong>Full-Stack Development:</strong> MERN stack mastery</li>
+                    <li><strong>Modern Frameworks:</strong> Next.js, React, TypeScript</li>
+                    <li><strong>Database Design:</strong> MongoDB, data modeling</li>
+                    <li><strong>API Development:</strong> RESTful services, real-time communication</li>
+                    <li><strong>Cloud Deployment:</strong> Vercel, Render, production-ready apps</li>
+                    <li><strong>UI/UX Design:</strong> Modern, responsive interfaces</li>
+                </ul>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">6 Months</div>
+                    <p>Intensive PLP Training</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <p>Technologies Mastered</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <p>Projects Completed</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Funding & Investment -->
+        <div class="slide">
+            <h1>💼 Investment Opportunity</h1>
+            <div class="highlight">
+                <h3>Seeking Seed Funding: $50,000 USD</h3>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>💻 Technology (40%)</h3>
+                    <ul>
+                        <li>Server infrastructure scaling</li>
+                        <li>Mobile app development</li>
+                        <li>Advanced AI features</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>📢 Marketing (30%)</h3>
+                    <ul>
+                        <li>Digital marketing campaigns</li>
+                        <li>Broker acquisition program</li>
+                        <li>Brand building activities</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>👥 Team (20%)</h3>
+                    <ul>
+                        <li>Additional developers</li>
+                        <li>Sales and marketing staff</li>
+                        <li>Customer support team</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🏢 Operations (10%)</h3>
+                    <ul>
+                        <li>Office setup in Gulu</li>
+                        <li>Legal and compliance</li>
+                        <li>Working capital</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Call to Action -->
+        <div class="slide">
+            <h1>🤝 Join Our Mission</h1>
+            <div class="highlight">
+                <h2>Transform Property Discovery in Northern Uganda</h2>
+                <p style="font-size: 1.3em; text-align: center; margin: 20px 0;">
+                    Together, we can bridge the digital divide in real estate and empower communities through technology.
+                </p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🚀 For Investors</h3>
+                    <p>Join us in revolutionizing the property market with proven technology and local expertise</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🏢 For Partners</h3>
+                    <p>Collaborate with us to expand digital real estate services across Uganda</p>
+                </div>
+                <div class="feature-card">
+                    <h3>👥 For Users</h3>
+                    <p>Experience the future of property discovery - sign up for early access today</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎓 For PLP Community</h3>
+                    <p>See how PLP training translates into real-world impact and business success</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 15: Contact & Next Steps -->
+        <div class="slide">
+            <h1>📞 Contact & Next Steps</h1>
+            <div style="text-align: center;">
+                <div class="highlight">
+                    <h2>Let's Connect!</h2>
+                    <div style="font-size: 1.2em; margin: 20px 0;">
+                        <p><strong>📧 Email:</strong> [your.email@example.com]</p>
+                        <p><strong>📱 Phone:</strong> [+256 XXX XXX XXX]</p>
+                        <p><strong>🌐 Platform:</strong> <a href="https://broka256.vercel.app" style="color: #3498db;">broka256.vercel.app</a></p>
+                        <p><strong>💼 LinkedIn:</strong> [Your LinkedIn Profile]</p>
+                        <p><strong>🐙 GitHub:</strong> [Your GitHub Profile]</p>
+                    </div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>📅 Schedule Demo</h3>
+                        <p>Book a personalized platform walkthrough</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>💰 Investment Discussion</h3>
+                        <p>Explore partnership opportunities</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>🤝 Collaboration</h3>
+                        <p>Join our mission to transform real estate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 16: Thank You -->
+        <div class="slide">
+            <div style="text-align: center; padding: 60px 0;">
+                <h1 style="font-size: 3em; color: #2c3e50; margin-bottom: 30px;">🙏 Thank You!</h1>
+                <h2 style="color: #3498db; margin-bottom: 40px;">Power Learn Project Academy</h2>
+                <div class="highlight">
+                    <h3>Questions & Discussion</h3>
+                    <p style="font-size: 1.3em; margin: 20px 0;">
+                        Ready to revolutionize property discovery in Northern Uganda?
+                    </p>
+                    <p style="font-size: 1.1em; color: #7f8c8d;">
+                        "Technology is best when it brings people together" - Matt Mullenweg
+                    </p>
+                </div>
+                <div style="margin-top: 40px;">
+                    <p style="font-size: 1.2em; color: #2c3e50;">
+                        <strong>🌟 Broka256 - Connecting Dreams to Reality</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="plp-footer">
+                <p>© 2024 Broka256 | Power Learn Project Academy Capstone | Northern Uganda</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

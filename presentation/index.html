@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broka256 - Capstone Project Presentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .slide { display: none; min-height: 100vh; }
+        .slide.active { display: flex; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .tech-card { transition: transform 0.3s ease; }
+        .tech-card:hover { transform: translateY(-5px); }
+        .feature-icon { font-size: 3rem; color: #3b82f6; }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-home text-blue-600 text-2xl mr-2"></i>
+                    <span class="text-xl font-bold text-gray-800">Broka256 Presentation</span>
+                </div>
+                <div class="flex space-x-4">
+                    <button onclick="previousSlide()" class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded">
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <span id="slideCounter" class="px-4 py-2 bg-blue-100 rounded">1 / 12</span>
+                    <button onclick="nextSlide()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slide 1: Title Slide -->
+    <div class="slide active gradient-bg items-center justify-center text-white">
+        <div class="text-center max-w-4xl mx-auto px-6">
+            <div class="mb-8">
+                <i class="fas fa-home text-8xl mb-6 animate-bounce"></i>
+            </div>
+            <h1 class="text-6xl font-bold mb-6">Broka256</h1>
+            <h2 class="text-3xl mb-8">Uganda's Premier Property Listing Platform</h2>
+            <div class="bg-white bg-opacity-20 rounded-lg p-6 mb-8">
+                <p class="text-xl mb-4">MERN Stack Capstone Project</p>
+                <p class="text-lg">Connecting Property Owners, Buyers & Brokers Across Uganda</p>
+            </div>
+            <div class="flex justify-center items-center space-x-8 text-lg">
+                <div class="flex items-center">
+                    <i class="fab fa-react text-3xl mr-2"></i>
+                    <span>React</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fab fa-node-js text-3xl mr-2"></i>
+                    <span>Node.js</span>
+                </div>
+                <div class="fas fa-database text-3xl mr-2"></div>
+                <span>MongoDB</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: Problem Statement -->
+    <div class="slide items-center justify-center bg-red-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <i class="fas fa-exclamation-triangle text-6xl text-red-500 mb-6"></i>
+                <h1 class="text-5xl font-bold text-gray-800 mb-8">The Problem</h1>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-red-600 mb-4">For Property Owners</h3>
+                    <ul class="space-y-3 text-lg">
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            Limited reach to potential buyers
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            Expensive traditional advertising
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            No verification system for listings
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            Difficulty managing inquiries
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-red-600 mb-4">For Property Seekers</h3>
+                    <ul class="space-y-3 text-lg">
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            Scattered property information
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            Fraudulent listings and scams
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            No direct communication with owners
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            Time-consuming property search
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <div class="bg-red-100 rounded-lg p-6 max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold text-red-700 mb-4">The Result</h3>
+                    <p class="text-lg text-red-600">
+                        Uganda's property market lacks a centralized, trusted platform that connects 
+                        all stakeholders efficiently and securely.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Solution Overview -->
+    <div class="slide items-center justify-center bg-green-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <i class="fas fa-lightbulb text-6xl text-green-500 mb-6"></i>
+                <h1 class="text-5xl font-bold text-gray-800 mb-8">Our Solution</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Broka256 is a comprehensive property listing platform that revolutionizes 
+                    how Ugandans buy, sell, and rent properties.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                    <i class="fas fa-shield-alt text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Verified Listings</h3>
+                    <p class="text-gray-600">
+                        Every property is verified by our team to ensure authenticity and prevent fraud.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                    <i class="fas fa-comments text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Real-time Communication</h3>
+                    <p class="text-gray-600">
+                        Live chat, email, and SMS notifications keep everyone connected instantly.
+                    </p>
+                </div>
+                
+                <div class="fas fa-robot text-4xl text-purple-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">AI-Powered Matching</h3>
+                    <p class="text-gray-600">
+                        Smart algorithms match buyers with their perfect properties based on preferences.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="bg-green-100 rounded-lg p-8 text-center">
+                <h3 class="text-2xl font-bold text-green-700 mb-4">Key Benefits</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>Centralized Platform</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>Secure Transactions</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>Mobile Responsive</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>Affordable Pricing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Technical Architecture -->
+    <div class="slide items-center justify-center bg-blue-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <i class="fas fa-cogs text-6xl text-blue-500 mb-6"></i>
+                <h1 class="text-5xl font-bold text-gray-800 mb-8">Technical Architecture</h1>
+                <p class="text-xl text-gray-600">Modern MERN Stack with Real-time Features</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="tech-card bg-white rounded-lg shadow-lg p-6 text-center">
+                    <i class="fab fa-react text-5xl text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Frontend</h3>
+                    <p class="text-gray-600 mb-4">React with Next.js</p>
+                    <ul class="text-sm text-gray-500">
+                        <li>• TypeScript</li>
+                        <li>• Tailwind CSS</li>
+                        <li>• shadcn/ui</li>
+                        <li>• Context API</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-card bg-white rounded-lg shadow-lg p-6 text-center">
+                    <i class="fab fa-node-js text-5xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Backend</h3>
+                    <p class="text-gray-600 mb-4">Node.js with Express</p>
+                    <ul class="text-sm text-gray-500">
+                        <li>• RESTful APIs</li>
+                        <li>• JWT Authentication</li>
+                        <li>• Socket.io</li>
+                        <li>• Middleware</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-card bg-white rounded-lg shadow-lg p-6 text-center">
+                    <i class="fas fa-database text-5xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Database</h3>
+                    <p class="text-gray-600 mb-4">MongoDB Atlas</p>
+                    <ul class="text-sm text-gray-500">
+                        <li>• Document-based</li>
+                        <li>• Mongoose ODM</li>
+                        <li>• Indexing</li>
+                        <li>• Aggregation</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-card bg-white rounded-lg shadow-lg p-6 text-center">
+                    <i class="fas fa-cloud text-5xl text-purple-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Deployment</h3>
+                    <p class="text-gray-600 mb-4">Cloud Hosting</p>
+                    <ul class="text-sm text-gray-500">
+                        <li>• Vercel (Frontend)</li>
+                        <li>• Render (Backend)</li>
+                        <li>• Cloudinary (Images)</li>
+                        <li>• CI/CD Pipeline</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h3 class="text-2xl font-bold text-center mb-6">System Architecture Flow</h3>
+                <div class="flex items-center justify-center space-x-4 text-sm">
+                    <div class="bg-blue-100 p-3 rounded">User Interface</div>
+                    <i class="fas fa-arrow-right text-gray-400"></i>
+                    <div class="bg-green-100 p-3 rounded">API Gateway</div>
+                    <i class="fas fa-arrow-right text-gray-400"></i>
+                    <div class="bg-yellow-100 p-3 rounded">Business Logic</div>
+                    <i class="fas fa-arrow-right text-gray-400"></i>
+                    <div class="bg-purple-100 p-3 rounded">Database</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Key Features -->
+    <div class="slide items-center justify-center bg-purple-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <i class="fas fa-star text-6xl text-purple-500 mb-6"></i>
+                <h1 class="text-5xl font-bold text-gray-800 mb-8">Key Features</h1>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="feature-icon mb-4">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Property Listings</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Land, Houses, Rentals, Commercial</li>
+                        <li>• Image galleries with thumbnails</li>
+                        <li>• Detailed property information</li>
+                        <li>• Location mapping</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="feature-icon mb-4">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Live Chat System</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Real-time messaging</li>
+                        <li>• Typing indicators</li>
+                        <li>• Message history</li>
+                        <li>• Online status</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="feature-icon mb-4">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI Property Matching</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Intelligent recommendations</li>
+                        <li>• Preference-based scoring</li>
+                        <li>• Match explanations</li>
+                        <li>• Priority weighting</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="feature-icon mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Verification System</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Document verification</li>
+                        <li>• Admin approval process</li>
+                        <li>• Verified badges</li>
+                        <li>• Fraud prevention</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="feature-icon mb-4">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Multi-Channel Notifications</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Email notifications</li>
+                        <li>• SMS alerts</li>
+                        <li>• WhatsApp integration</li>
+                        <li>• Real-time updates</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="feature-icon mb-4">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Subscription System</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• 1-week free trial</li>
+                        <li>• UGX 6,000/month premium</li>
+                        <li>• Mobile Money payments</li>
+                        <li>• Automated billing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Database Design -->
+    <div class="slide items-center justify-center bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <i class="fas fa-database text-6xl text-gray-600 mb-6"></i>
+                <h1 class="text-5xl font-bold text-gray-800 mb-8">Database Design</h1>
+                <p class="text-xl text-gray-600">MongoDB Schema with Relationships</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-blue-600">User Model</h3>
+                    <ul class="text-sm space-y-2">
+                        <li><strong>name:</strong> String (required)</li>
+                        <li><strong>email:</strong> String (unique)</li>
+                        <li><strong>phone:</strong> String</li>
+                        <li><strong>role:</strong> buyer/seller/broker/admin</li>
+                        <li><strong>subscriptionStatus:</strong> active/expired</li>
+                        <li><strong>subscriptionExpiry:</strong> Date</li>
+                        <li><strong>avatar:</strong> String (URL)</li>
+                        <li><strong>isVerified:</strong> Boolean</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-green-600">Property Model</h3>
+                    <ul class="text-sm space-y-2">
+                        <li><strong>title:</strong> String (required)</li>
+                        <li><strong>description:</strong> String</li>
+                        <li><strong>type:</strong> land/house/rental/commercial</li>
+                        <li><strong>price:</strong> Number</li>
+                        <li><strong>location:</strong> Object (district, parish)</li>
+                        <li><strong>features:</strong> Object (beds, baths, size)</li>
+                        <li><strong>images:</strong> Array of URLs</li>
+                        <li><strong>owner:</strong> ObjectId (ref: User)</li>
+                        <li><strong>status:</strong> draft/active/sold</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-purple-600">Chat Model</h3>
+                    <ul class="text-sm space-y-2">
+                        <li><strong>participants:</strong> [ObjectId] (ref: User)</li>
+                        <li><strong>property:</strong> ObjectId (ref: Property)</li>
+                        <li><strong>lastMessage:</strong> ObjectId (ref: Message)</li>
+                        <li><strong>unreadCount:</strong> Number</li>
+                        <li><strong>isActive:</strong> Boolean</li>
+                        <li><strong>createdAt:</strong> Date</li>
+                        <li><strong>updatedAt:</strong> Date</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-red-600">Message Model</h3>
+                    <ul class="text-sm space-y-2">
+                        <li><strong>chat:</strong> ObjectId (ref: Chat)</li>
+                        <li><strong>sender:</strong> ObjectId (ref: User)</li>
+                        <li><strong>content:</strong> String</li>
+                        <li><strong>messageType:</strong> text/image/file</li>
+                        <li><strong>isRead:</strong> Boolean</li>
+                        <li><strong>readAt:</strong> Date</li>
+                        <li><strong>createdAt:</strong> Date</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-yellow-600">Notification Model</h3>
+                    <ul class="text-sm space-y-2">
+                        <li><strong>user:</strong> ObjectId (ref: User)</li>
+                        <li><strong>type:</strong> String (enum)</li>
+                        <li><strong>message:</strong> String</li>
+                        <li><strong>data:</strong> Object (additional info)</li>
+                        <li><strong>status:</strong> pending/sent/failed</li>
+                        <li><strong>channels:</strong> [email, sms, whatsapp]</li>
+                        <li><strong>sentAt:</strong> Date</li>
+                        <li><strong>isRead:</strong> Boolean</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-indigo-600">Subscription Model</h3>
+                    <ul class="text-sm space-y-2">
+                        <li><strong>user:</strong> ObjectId (ref: User)</li>
+                        <li><strong>plan:</strong> free/premium/enterprise</li>
+                        <li><strong>amount:</strong> Number</li>
+                        <li><strong>status:</strong> active/expired/cancelled</li>
+                        <li><strong>startDate:</strong> Date</li>
+                        <li><strong>endDate:</strong> Date</li>
+                        <li><strong>paymentMethod:</strong> String</li>
+                        <li><strong>reference:</strong> String</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-bold mb-4 text-center">Database Relationships</h3>
+                <div class="text-center text-sm">
+                    <span class="bg-blue-100 px-3 py-1 rounded mr-2">User</span>
+                    <i class="fas fa-arrow-right text-gray-400 mx-2"></i>
+                    <span class="bg-green-100 px-3 py-1 rounded mr-2">Properties (1:Many)</span>
+                    <i class="fas fa-arrow-right text-gray-400 mx-2"></i>
+                    <span class="bg-purple-100 px-3 py-1 rounded mr-2">Chats (Many:Many)</span>
+                    <i class="fas fa-arrow-right text-gray-400 mx-2"></i>
+                    <span class="bg-red-100 px-3 py-1 rounded">Messages (1:Many)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: API Endpoints -->
+    <div class="slide items-center justify-center bg-indigo-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <i class="fas fa-code text-6xl text-indigo-500 mb-6"></i>
+                <h1 class="text-5xl font-bold text-gray-800 mb-8">RESTful API Design</h1>
+                <p class="text-xl text-gray-600">Comprehensive Backend API Structure</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-blue-600">Authentication Routes</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between items-center p-2 bg-green-50 rounded">
+                            <span class="font-mono">POST /api/auth/register</span>
+                            <span class="bg-green-200 px-2 py-1 rounded text-xs">CREATE</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-blue-50 rounded">
+                            <span class="font-mono">POST /api/auth/login</span>
+                            <span class="bg-blue-200 px-2 py-1 rounded text-xs">AUTH</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-yellow-50 rounded">
+                            <span class="font-mono">POST /api/auth/logout</span>
+                            <span class="bg-yellow-200 px-2 py-1 rounded text-xs">AUTH</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-purple-50 rounded">
+                            <span class="font-mono">GET /api/auth/me</span>
+                            <span class="bg-purple-200 px-2 py-1 rounded text-xs">READ</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-green-600">Property Routes</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between items-center p-2 bg-green-50 rounded">
+                            <span class="font-mono">GET /api/properties</span>
+                            <span class="bg-green-200 px-2 py-1 rounded text-xs">READ</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-blue-50 rounded">
+                            <span class="font-mono">GET /api/properties/:id</span>
+                            <span class="bg-blue-200 px-2 py-1 rounded text-xs">READ</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-yellow-50 rounded">
+                            <span class="font-mono">POST /api/properties</span>
+                            <span class="bg-yellow-200 px-2 py-1 rounded text-xs">CREATE</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-red-50 rounded">
+                            <span class="font-mono">PUT /api/properties/:id</span>
+                            <span class="bg-red-200 px-2 py-1 rounded text-xs">UPDATE</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-purple-600">Chat Routes</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between items-center p-2 bg-green-50 rounded">
+                            <span class="font-mono">GET /api/chat/conversations</span>
+                            <span class="bg-green-200 px-2 py-1 rounded text-xs">READ</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-blue-50 rounded">
+                            <span class="font-mono">POST /api/chat/initiate</span>
+                            <span class="bg-blue-200 px-2 py-1 rounded text-xs">CREATE</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-yellow-50 rounded">
+                            <span class="font-mono">GET /api/chat/:id/messages</span>
+                            <span class="bg-yellow-200 px-2 py-1 rounded text-xs">READ</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-purple-50 rounded">
+                            <span class="font-mono">POST /api/chat/:id/message</span>
+                            <span class="bg-purple-200 px-2 py-1 rounded text-xs">CREATE</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-red-600">Admin Routes</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between items-center p-2 bg-green-50 rounded">
+                            <span class="font-mono">GET /api/admin/properties</span>
+                            <span class="bg-green-200 px-2 py-1 rounded text-xs">READ</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-blue-50 rounded">
+                            <span class="font-mono">PUT /api/admin/verify/:id</span>
+                            <span class="bg-blue-200 px-2 py-1 rounded text-xs">UPDATE</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-yellow-50 rounded">
+                            <span class="font-mono">GET /api/admin/users</span>
+                            <span class="bg-yellow-200 px-2 py-1 rounded text-xs">READ</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-red-50 rounded">
+                            <span class="font-mono">DELETE /api/admin/property/:id</span>
+                            <span class="bg-red-200 px-2 py-1 rounded text-xs">DELETE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-bold mb-4 text-center">API Features</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                    <div class="p-4 bg-blue-50 rounded">
+                        <i class="fas fa-shield-alt text-2xl text-blue-500 mb-2"></i>
+                        <h4 class="font-bold">JWT Authentication</h4>
+                        <p class="text-sm text-gray-600">Secure token-based auth</p>
+                    </div>
+                    <div class="p-4 bg-green-50 rounded">
+                        <i class="fas fa-check-circle text-2xl text-green-500 mb-2"></i>
+                        <h4 class="font-bold">Input Validation</h4>
+                        <p class="text-sm text-gray-600">Express-validator middleware</p>
+                    </div>
+                    <div class="p-4 bg-yellow-50 rounded">
+                        <i class="fas fa-exclamation-triangle text-2xl text-yellow-500 mb-2"></i>
+                        <h4 class="font-bold">Error Handling</h4>
+                        <p class="text-sm text-gray-600">Comprehensive error responses</p>
+                    </div>
+                    <div class="p-4 bg-purple-50 rounded">
+                        <i class="fas fa-tachometer-alt text-2xl text-purple-500 mb-2"></i>
+                        <h4 class="font-bold">Rate Limiting</h4>
+                        <p class="text-sm text-gray-600">API abuse prevention</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Real-time Features -->
+    <div class="slide items-center justify-center bg-yellow-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <i class="fas fa-bolt text-6xl text-yellow-500 mb-6"></i>
+                <h1 class="text-5xl font-bold text-gray-800 mb-8">Real-time Features</h1>
+                <p class="text-xl text-gray-600">Socket.io Integration for Live Communication</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-blue-600">Live Chat System</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-comments text-blue-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Instant Messaging</h4>
+                                <p class="text-gray-600">Real-time message delivery between buyers and sellers</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-keyboard text-green-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Typing Indicators</h4>
+                                <p class="text-gray-600">Shows when the other person is typing</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-circle text-green-400 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Online Status</h4>
+                                <p class="text-gray-600">Real-time user presence indicators</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-history text-purple-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Message History</h4>
+                                <p class="text-gray-600">Persistent chat history across sessions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-green-600">Notification System</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-envelope text-blue-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Email Notifications</h4>
+                                <p class="text-gray-600">Professional HTML email templates</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-sms text-green-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">SMS Alerts</h4>
+                                <p class="text-gray-600">Instant SMS notifications via Twilio</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fab fa-whatsapp text-green-600 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">WhatsApp Integration</h4>
+                                <p class="text-gray-600">WhatsApp Business API integration</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-bell text-yellow-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Push Notifications</h4>
+                                <p class="text-gray-600">Browser push notifications for instant alerts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h3 class="text-2xl font-bold text-center mb-6">Socket.io Implementation</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-plug text-2xl text-blue-600"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Connection Management</h4>
+                        <p class="text-sm text-gray-600">Automatic reconnection and connection pooling</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users text-2xl text-green-600"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Room Management</h4>
+                        <p class="text-sm text-gray-600">Property-specific chat rooms for organized communication</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-sync text-2xl text-purple-600"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Event Handling</h4>
+                        <p class="text-sm text-gray-600">Custom events for messages, typing, and presence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: AI Property Matching -->
+    <div class="slide items-center justify-center bg-pink-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <i class="fas fa-robot text-6xl text-pink-500 mb-6"></i>
+                <h1 class="text-5xl font-bold text-gray-800 mb-8">AI Property Matching</h1>
+                <p class="text-xl text-gray-600">Intelligent Recommendation System</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-purple-600">How It Works</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-purple-100 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                                <span class="text-purple-600 font-bold">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">User Preferences</h4>
+                                <p class="text-gray-600">Users set budget, location, property type, and feature preferences</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-purple-100 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                                <span class="text-purple-600 font-bold">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Priority Weighting</h4>
+                                <p class="text-gray-600">Users rate importance of location, price, size, and features (1-10 scale)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-purple-100 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                                <span class="text-purple-600 font-bold">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">AI Scoring</h4>
+                                <p class="text-gray-600">Algorithm calculates match scores for each property</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-purple-100 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                                <span class="text-purple-600 font-bold">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Ranked Results</h4>
+                                <p class="text-gray-600">Properties ranked by compatibility with detailed explanations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-blue-600">Scoring Algorithm</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3 bg-blue-50 rounded">
+                            <span class="font-semibold">Location Match</span>
+                            <span class="bg-blue-200 px-3 py-1 rounded">30%</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-green-50 rounded">
+                            <span class="font-semibold">Price Compatibility</span>
+                            <span class="bg-green-200 px-3 py-1 rounded">30%</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-yellow-50 rounded">
+                            <span class="font-semibold">Feature Requirements</span>
+                            <span class="bg-yellow-200 px-3 py-1 rounded">25%</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-purple-50 rounded">
+                            <span class="font-semibold">Property Type</span>
+                            <span class="bg-purple-200 px-3 py-1 rounded">15%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-gray-50 rounded">
+                        <h4 class="font-bold mb-2">Smart Features</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Nearby district matching</li>
+                            <li>• Budget flexibility scoring</li>
+                            <li>• Related property type suggestions</li>
+                            <li>• Size requirement parsing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h3 class="text-2xl font-bold text-center mb-6">Match Results Display</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="bg-green-100 rounded-lg p-4 mb-4">
+                            <div class="text-3xl font-bold text-green-600">95%</div>
+                            <div class="text-sm text-gray-600">Match Score</div>
+                        </div>
+                        <h4 class="font-bold">Perfect Match</h4>
+                        <p class="text-sm text-gray-600">Meets all criteria with high compatibility</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-yellow-100 rounded-lg p-4 mb-4">
+                            <div class="text-3xl font-bold text-yellow-600">78%</div>
+                            <div class="text-sm text-gray-600">Match Score</div>
+                        </div>
+                        <h4 class="font-bold">Good Match</h4>
+                        <p class="text-sm text-gray-600">Meets most criteria with some compromises</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-blue-100 rounded-lg p-4 mb-4">
+                            <div class="text-3xl font-bold text-blue-600">62%</div>
+                            <div class="text-sm text-gray-600">Match Score</div>
+                        </div>
+                        <h4 class="font-bold">Potential Match</h4>
+                        <p class="text-sm text-gray-600">Worth considering with some adjustments</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 10: Deployment & DevOps -->
+    <div class="slide items-center justify-center bg-teal-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <i class="fas fa-rocket text-6xl text-teal-500 mb-6"></i>
+                <h1 class="text-5xl font-bold text-gray-800 mb-8">Deployment & DevOps</h1>
+                <p class="text-xl text-gray-600">Production-Ready Cloud Infrastructure</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                    <i class="fas fa-server text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Backend Hosting</h3>
+                    <div class="text-left">
+                        <h4 class="font-bold text-blue-600 mb-2">Render.com</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Auto-deploy from Git</li>
+                            <li>• Environment variables</li>
+                            <li>• Health monitoring</li>
+                            <li>• SSL certificates</li>
+                            <li>• Scaling capabilities</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                    <i class="fas fa-globe text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Frontend Hosting</h3>
+                    <div class="text-left">
+                        <h4 class="font-bold text-green-600 mb-2">Vercel</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Global CDN</li>
+                            <li>• Automatic deployments</li>
+                            <li>• Preview deployments</li>
+                            <li>• Analytics dashboard</li>
+                            <li>• Custom domains</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                    <i class="fas fa-database text-4xl text-purple-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Database Hosting</h3>
+                    <div class="text-left">
+                        <h4 class="font-bold text-purple-600 mb-2">MongoDB Atlas</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Cloud-native database</li>
+                            <li>• Automatic backups</li>
+                            <li>• Performance monitoring</li>
+                            <li>• Security features</li>
+                            <li>• Global clusters</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-xl font-bold mb-4 text-orange-600">Third-Party Services</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-cloud text-blue-500"></i>
+                            <div>
+                                <h4 class="font-bold">Cloudinary</h4>
+                                <p class="text-sm text-gray-600">Image storage and optimization</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-red-500"></i>
+                            <div>
+                                <h4 class="font-bold">Gmail SMTP</h4>
+                                <p class="text-sm text-gray-600">Email notification service</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-sms text-green-500"></i>
+                            <div>
+                                <h4 class="font-bold">Twilio</h4>
+                                <p class="text-sm text-gray-600">SMS and WhatsApp messaging</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-credit-card text-purple-500"></i>
+                            <div>
+                                <h4 class="font-bold">Flutterwave</h4>
+                                <p class="text-sm text-gray-600">Payment processing for Uganda</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-xl font-bold mb-4 text-indigo-600">CI/CD Pipeline</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-indigo-100 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-indigo-600 text-xs font-bold">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Code Push</h4>
+                                <p class="text-sm text-gray-600">Developer pushes to GitHub repository</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-indigo-100 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-indigo-600 text-xs font-bold">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Auto Build</h4>
+                                <p class="text-sm text-gray-600">Vercel/Render automatically builds application</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-indigo-100 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-indigo-600 text-xs font-bold">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Deploy</h4>
+                                <p class="text-sm text-gray-600">Automatic deployment to production</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-indigo-100 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-indigo-600 text-xs font-bold">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Monitor</h4>
+                                <p class="text-sm text-gray-600">Health checks and performance monitoring</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h3 class="text-xl font-bold text-center mb-6">Production URLs</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="text-center p-4 bg-blue-50 rounded">
+                        <i class="fas fa-globe text-2xl text-blue-500 mb-2"></i>
+                        <h4 class="font-bold">Frontend Application</h4>
+                        <p class="text-sm text-blue-600 font-mono">https://broka256.vercel.app</p>
+                    </div>
+                    <div class="text-center p-4 bg-green-50 rounded">
+                        <i class="fas fa-server text-2xl text-green-500 mb-2"></i>
+                        <h4 class="font-bold">Backend API</h4>
+                        <p class="text-sm text-green-600 font-mono">https://broka256-api.onrender.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 11: Business Model -->
+    <div class="slide items-center justify-center bg-emerald-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <i class="fas fa-chart-line text-6xl text-emerald-500 mb-6"></i>
+                <h1 class="text-5xl font-bold text-gray-800 mb-8">Business Model</h1>
+                <p class="text-xl text-gray-600">Sustainable Revenue Strategy</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                    <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-gift text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Free Trial</h3>
+                    <div class="text-3xl font-bold text-blue-600 mb-2">1 Week</div>
+                    <p class="text-gray-600 mb-4">Perfect for testing our platform</p>
+                    <ul class="text-sm space-y-2">
+                        <li>• 1 active property listing</li>
+                        <li>• Basic search visibility</li>
+                        <li>• Email notifications</li>
+                        <li>• Property verification</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center border-2 border-emerald-500 transform scale-105">
+                    <div class="bg-emerald-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-star text-2xl text-emerald-600"></i>
+                    </div>
+                    <div class="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm mb-2">Most Popular</div>
+                    <h3 class="text-xl font-bold mb-4">Premium</h3>
+                    <div class="text-3xl font-bold text-emerald-600 mb-2">UGX 6,000</div>
+                    <p class="text-gray-600 mb-4">per month</p>
+                    <ul class="text-sm space-y-2">
+                        <li>• Unlimited property listings</li>
+                        <li>• Priority search placement</li>
+                        <li>• SMS + Email notifications</li>
+                        <li>• WhatsApp integration</li>
+                        <li>• Live chat support</li>
+                        <li>• Listing analytics</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                    <div class="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-building text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Enterprise</h3>
+                    <div class="text-3xl font-bold text-purple-600 mb-2">Custom</div>
+                    <p class="text-gray-600 mb-4">Contact us</p>
+                    <ul class="text-sm space-y-2">
+                        <li>• Everything in Premium</li>
+                        <li>• Custom branding</li>
+                        <li>• API access</li>
+                        <li>• Bulk property import</li>
+                        <li>• Advanced analytics</li>
+                        <li>• Dedicated support</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-xl font-bold mb-6 text-green-600">Revenue Projections</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3 bg-green-50 rounded">
+                            <span>Month 1-3 (Launch)</span>
+                            <span class="font-bold">100 users</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-green-100 rounded">
+                            <span>Month 4-6 (Growth)</span>
+                            <span class="font-bold">500 users</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-green-200 rounded">
+                            <span>Month 7-12 (Scale)</span>
+                            <span class="font-bold">2,000 users</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-green-300 rounded">
+                            <span>Year 2 Target</span>
+                            <span class="font-bold">10,000 users</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-green-50 rounded">
+                        <h4 class="font-bold mb-2">Monthly Revenue (Year 2)</h4>
+                        <p class="text-2xl font-bold text-green-600">UGX 60,000,000</p>
+                        <p class="text-sm text-gray-600">(10,000 users × UGX 6,000)</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-xl font-bold mb-6 text-blue-600">Market Opportunity</h3>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-blue-50 rounded">
+                            <h4 class="font-bold">Uganda Property Market</h4>
+                            <p class="text-sm text-gray-600">Growing middle class driving property demand</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 rounded">
+                            <h4 class="font-bold">Digital Adoption</h4>
+                            <p class="text-sm text-gray-600">45% internet penetration and growing</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 rounded">
+                            <h4 class="font-bold">Mobile Money</h4>
+                            <p class="text-sm text-gray-600">90% mobile money adoption for payments</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 rounded">
+                            <h4 class="font-bold">Competition Gap</h4>
+                            <p class="text-sm text-gray-600">No comprehensive property platform exists</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 12: Demo & Conclusion -->
+    <div class="slide items-center justify-center gradient-bg text-white">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="mb-12">
+                <i class="fas fa-trophy text-8xl mb-6 animate-pulse"></i>
+                <h1 class="text-6xl font-bold mb-8">Thank You!</h1>
+                <h2 class="text-3xl mb-8">Broka256 - Revolutionizing Uganda's Property Market</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white bg-opacity-20 rounded-lg p-6">
+                    <i class="fas fa-check-circle text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Project Complete</h3>
+                    <p>Full-stack MERN application with advanced features</p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-6">
+                    <i class="fas fa-rocket text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Production Ready</h3>
+                    <p>Deployed and accessible with real-time features</p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-6">
+                    <i class="fas fa-users text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Market Ready</h3>
+                    <p>Solving real problems for Uganda's property market</p>
+                </div>
+            </div>
+            
+            <div class="bg-white bg-opacity-20 rounded-lg p-8 mb-8">
+                <h3 class="text-2xl font-bold mb-4">Key Achievements</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                    <div>✅ MERN Stack Mastery</div>
+                    <div>✅ Real-time Features</div>
+                    <div>✅ AI Integration</div>
+                    <div>✅ Payment System</div>
+                    <div>✅ Cloud Deployment</div>
+                    <div>✅ Mobile Responsive</div>
+                    <div>✅ Security Best Practices</div>
+                    <div>✅ Scalable Architecture</div>
+                </div>
+            </div>
+            
+            <div class="space-y-4">
+                <h3 class="text-2xl font-bold">Live Demo</h3>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://broka256.vercel.app" target="_blank" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-external-link-alt mr-2"></i>
+                        View Live Site
+                    </a>
+                    <a href="https://github.com/your-username/broka256" target="_blank" class="bg-gray-800 text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-700 transition-colors">
+                        <i class="fab fa-github mr-2"></i>
+                        View Source Code
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-lg">
+                <p class="mb-4">Questions & Discussion</p>
+                <p class="text-xl opacity-90">Ready to revolutionize Uganda's property market! 🏠🇺🇬</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            updateCounter();
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function updateCounter() {
+            document.getElementById('slideCounter').textContent = `${currentSlide + 1} / ${totalSlides}`;
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+
+        // Initialize
+        updateCounter();
+    </script>
+</body>
+</html>
