@@ -30,6 +30,10 @@ const corsOptions = {
   allowedHeaders: ["Content-Type", "Authorization"],
 }
 app.use(cors(corsOptions))
+app.use(cors({
+  origin: 'https://broka256.onrender.com',
+  credentials: true
+}));
 
 // Socket.io configuration
 const io = socketIo(server, {
