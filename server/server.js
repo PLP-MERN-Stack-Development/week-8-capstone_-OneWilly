@@ -36,9 +36,15 @@ app.use(cors({
 }));
 
 // Socket.io configuration
-const io = socketIo(server, {
-  cors: corsOptions,
-})
+
+const io = socketio(server, {
+  cors: {
+    origin: "https://broka256.onrender.com",
+    methods: ["GET", "POST"],
+    transports: ['websocket']
+  }
+});
+
 
 // Body parsing middleware
 app.use(express.json({ limit: "10mb" }))
